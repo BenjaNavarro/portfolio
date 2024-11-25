@@ -25,7 +25,7 @@ export default function Home() {
     }
 
     return (
-        <main className="flex flex-col items-center w-full min-h-screen bg-gray-900">
+        <main className="flex flex-col items-center w-full min-h-screen">
             <Header {...{handleScroll}}/>
             <About {...{aboutRef}}/>
             <Projects {...{projectsRef}}/>

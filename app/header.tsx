@@ -1,10 +1,23 @@
-declare interface ComponentProps{
+"use client"
+import { useTheme } from "next-themes";
+import { useEffect, useMemo } from "react";
+import Dark from "./icons/dark";
+declare interface ComponentProps {
     handleScroll: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 }
 
 export default function Header({
     handleScroll
 }: ComponentProps) {
+    const { systemTheme, theme, setTheme } = useTheme();
+    const currentTheme = useMemo(
+        () => theme === 'system' ? systemTheme : theme, 
+        [theme, systemTheme]
+    );
+
+    useEffect(() => {
+        console.log({theme});
+    }, [theme]);
 
     const headerNav = [
         { label: 'Sobre mí', name: 'about' },
@@ -13,9 +26,9 @@ export default function Header({
     ];
 
     return (
-        <header className='flex w-full items-center !bg-inherit'>
-            <h1 className='p-4 text-3xl font-bold text-white bg-inherit'>LOGO</h1>
-            <ol className='flex w-full items-center justify-around bg-inherit text-white'>
+        <header className='flex w-full items-center sticky top-0 bg-inherit'>
+            <h1 className='p-4 text-3xl font-bold'>LOGO</h1>
+            <ol className='flex w-full items-center justify-around'>
                 {headerNav.map((h, i) => 
                     <li key={i}>
                         <button
@@ -27,6 +40,14 @@ export default function Header({
                     </li>
                 )} 
             </ol>
+            <button 
+                className="w-6 p-1 m-1 flex items-center justify-center"
+                onClick={() => theme == "dark"? setTheme('light'): setTheme("dark")}
+            >
+                <Dark
+                    className="cursor-[inherit]"
+                />
+            </button>
         </header>
     );
 }
