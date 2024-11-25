@@ -20,8 +20,8 @@ export default function Home() {
 
     const handleScroll = function(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
         if(e.target?.name === 'about') aboutRef?.current?.scrollIntoView();
-        if(e.target.name === 'projects') projectsRef?.current?.scrollIntoView();
-        if(e.target.name === 'contact') contactRef?.current?.scrollIntoView();
+        if(e.target?.name === 'projects') projectsRef?.current?.scrollIntoView();
+        if(e.target?.name === 'contact') contactRef?.current?.scrollIntoView();
     }
 
     return (

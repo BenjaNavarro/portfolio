@@ -13,7 +13,7 @@ export default function Header({
     ];
 
     return (
-        <head className='flex w-full items-center !bg-inherit'>
+        <header className='flex w-full items-center !bg-inherit'>
             <h1 className='p-4 text-3xl font-bold text-white bg-inherit'>LOGO</h1>
             <ol className='flex w-full items-center justify-around bg-inherit text-white'>
                 {headerNav.map((h, i) => 
@@ -27,6 +27,6 @@ export default function Header({
                     </li>
                 )} 
             </ol>
-        </head>
+        </header>
     );
 }
