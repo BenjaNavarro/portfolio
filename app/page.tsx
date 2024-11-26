@@ -5,6 +5,7 @@ import About from "./about";
 import Projects from "./projects";
 import Contact from "./contact";
 import Footer from "./footer";
+import ThreeDComponent from "./threeDComponent";
 
  // This is a client component 👈🏽
 
@@ -25,12 +26,13 @@ export default function Home() {
     }
 
     return (
-        <main className="flex flex-col items-center w-full min-h-screen">
-            <Header {...{handleScroll}}/>
+        <main className="flex flex-col items-center w-full min-h-screen bg-transparent">
+            <ThreeDComponent/>
+            {/* <Header {...{handleScroll}}/>
             <About {...{aboutRef}}/>
             <Projects {...{projectsRef}}/>
             <Contact {...{contactRef}}/>
-            <Footer/>
+            <Footer/> */}
         </main>
     );
 }

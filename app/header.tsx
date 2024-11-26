@@ -26,7 +26,7 @@ export default function Header({
     ];
 
     return (
-        <header className='flex w-full items-center sticky top-0 bg-inherit'>
+        <header className='flex w-full items-center sticky top-0 bg-inherit px-8'>
             <h1 className='p-4 text-3xl font-bold'>LOGO</h1>
             <ol className='flex w-full items-center justify-around'>
                 {headerNav.map((h, i) => 
@@ -41,7 +41,7 @@ export default function Header({
                 )} 
             </ol>
             <button 
-                className="w-6 p-1 m-1 flex items-center justify-center"
+                className="w-8 p-1 m-1 flex items-center justify-center"
                 onClick={() => theme == "dark"? setTheme('light'): setTheme("dark")}
             >
                 <Dark
